@@ -19,6 +19,7 @@ namespace Catalog.API
                 // AddOpenBehavior le dice a MediatR agrega este behavior para todos los requests que pasen por MediatR
                 // De esta manera, no tienes que registrar un ValidationBehavior<CreateProductCommand, CreateProductResult>, otro para GetProductByIdQuery, GetProductByIdResult, etc.
                 config.AddOpenBehavior(typeof(ValidationBehavior<,>));
+                config.AddOpenBehavior(typeof(LoggingBehavior<,>));
             });
 
             builder.Services.AddValidatorsFromAssembly(assembly:assembly);
@@ -26,6 +27,8 @@ namespace Catalog.API
             builder.Services.AddMarten(opts =>
             {
                 opts.Connection(builder.Configuration.GetConnectionString("Database")!);
+                // Disable the absurdly verbose Npgsql logs
+                opts.DisableNpgsqlLogging = true;
             }).UseLightweightSessions();
 
             builder.Services.AddExceptionHandler<CustomExceptionHandler>();

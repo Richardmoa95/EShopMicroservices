@@ -24,14 +24,10 @@ public class CreateProductCommandValidator : AbstractValidator<CreateProductComm
     }
 }
 
-internal class CreateProductCommandHandler
-    (IDocumentSession session, ILogger<CreateProductCommandHandler> logger)
-    : ICommandHandler<CreateProductCommad, CreateProductResult>
+internal class CreateProductCommandHandler(IDocumentSession session) : ICommandHandler<CreateProductCommad, CreateProductResult>
 {
     public async Task<CreateProductResult> Handle(CreateProductCommad request, CancellationToken cancellationToken)
     {
-        logger.LogInformation("CreateProductCommandHandler.Handle Called with {@request}", request);
-
         // create Product entity from command object
         var product = new Product
         {
