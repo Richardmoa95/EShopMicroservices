@@ -2,7 +2,7 @@
 
 public record UpdateProductCommand(Guid Id, string Name, List<string> Category, string Description, string ImageFile, decimal Price) : ICommand<UpdateProductResult>;
 
-public record UpdateProductResult(bool IsSuccess);
+public record UpdateProductResult(Product Product);
 
 public class UpdateProductCommandValidator : AbstractValidator<UpdateProductCommand>
 {
@@ -34,6 +34,6 @@ internal class UpdateProductCommandHandler(IDocumentSession session) : ICommandH
         session.Update(product);
         await session.SaveChangesAsync(cancellationToken);
 
-        return new UpdateProductResult(true);
+        return new UpdateProductResult(product);
     }
 }
