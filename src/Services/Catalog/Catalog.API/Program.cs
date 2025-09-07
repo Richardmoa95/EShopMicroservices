@@ -1,3 +1,5 @@
+using HealthChecks.UI.Client;
+
 namespace Catalog.API
 {
     public class Program
@@ -37,14 +39,20 @@ namespace Catalog.API
             }
 
             builder.Services.AddExceptionHandler<CustomExceptionHandler>();
+
+            builder.Services.AddHealthChecks()
+                .AddNpgSql(builder.Configuration.GetConnectionString("Database")!);
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
             app.MapCarter();
 
-            app.UseExceptionHandler(options =>
-            {
+            app.UseExceptionHandler(options => { });
 
+            app.UseHealthChecks("/health", new HealthCheckOptions
+            {
+                ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
             });
 
             app.Run();
