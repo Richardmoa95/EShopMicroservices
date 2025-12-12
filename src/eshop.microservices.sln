@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.14.36301.6
+# Visual Studio Version 18
+VisualStudioVersion = 18.3.11304.161 d18.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
@@ -18,6 +18,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Basket", "Basket", "{D8FD677A-73B0-42CD-9823-327713F7E726}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Basket.API", "Services\Basket\Basket.API\Basket.API.csproj", "{3914B8A4-0338-4CA8-AB3A-067C1F7DBF17}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Discount", "Discount", "{BB216005-DD32-435A-ADF7-12F55063AEC3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Discount.Grpc", "Services\Discount\Discount.Grpc\Discount.Grpc.csproj", "{46B3047B-D8DB-416E-A2C3-F71E7D9498B4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +45,10 @@ Global
 		{3914B8A4-0338-4CA8-AB3A-067C1F7DBF17}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3914B8A4-0338-4CA8-AB3A-067C1F7DBF17}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3914B8A4-0338-4CA8-AB3A-067C1F7DBF17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46B3047B-D8DB-416E-A2C3-F71E7D9498B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46B3047B-D8DB-416E-A2C3-F71E7D9498B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46B3047B-D8DB-416E-A2C3-F71E7D9498B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46B3047B-D8DB-416E-A2C3-F71E7D9498B4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -51,6 +59,8 @@ Global
 		{55263E48-8581-4849-B295-D78BE78CB776} = {A27B937D-2B5E-4FA6-88D0-09DE982B4121}
 		{D8FD677A-73B0-42CD-9823-327713F7E726} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{3914B8A4-0338-4CA8-AB3A-067C1F7DBF17} = {D8FD677A-73B0-42CD-9823-327713F7E726}
+		{BB216005-DD32-435A-ADF7-12F55063AEC3} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{46B3047B-D8DB-416E-A2C3-F71E7D9498B4} = {BB216005-DD32-435A-ADF7-12F55063AEC3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {380586DA-03AE-4DF5-9561-560F35D07415}
